@@ -1,6 +1,6 @@
+import { ThemeProvider } from "next-themes";
 import { SearchProvider } from "@/context/SearchContext";
 import { Toaster } from "react-hot-toast";
-import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -14,11 +14,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        suppressHydrationWarning
-        className="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100"
-      >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
           <SearchProvider>
             <Toaster position="top-right" />
             <Navbar />

@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const links = ["Posts", "About", "Request", "Contact", "Admin"];
 
@@ -15,6 +15,7 @@ export default function Navbar() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
 
   if (!mounted) return null;
 

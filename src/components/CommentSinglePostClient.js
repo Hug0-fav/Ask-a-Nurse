@@ -9,6 +9,7 @@ import DeletePostButton from "@/components/DeletePostButton";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { ADMIN_ID } from "@/lib/admin";
+import Image from "next/image";
 
 // this component is rendered on the client side
 // this component fetches a single post
@@ -31,9 +32,12 @@ export default function CommentSinglePostClient({ post }) {
   return (
     <main className="p-8 max-w-3xl mx-auto">
       {post.image_url && (
-        <img
+        <Image
           src={post.image_url}
           alt="Post"
+          width={800}
+          height={450}
+          
           className="w-full mb-6 rounded-md"
         />
       )}

@@ -1,28 +1,25 @@
 "use client";
 
-import { useTheme } from "next-themes";
 // import "globals.css"
 import Image from "next/image";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
   return (
     <main className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 px-6 py-20">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Text Section */}
         <div>
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">
-            Jennie’s Blog
+            Jennie&apos;s Blog
           </h1>
           <h2 className="text-xl sm:text-2xl font-semibold mb-4">
-            Find out what makes Jennie’s blog tick
+            Find out what makes Jennie&apos;s blog tick
           </h2>
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
             Welcome to my personal space on the web — a mix of curiosity,
             creativity, and connection. Dive into thoughts, stories, and
-            reflections crafted with love. Whether you're here for insight or
-            inspiration, I’m glad you came.
+            reflections crafted with love. Whether you&apos;re here for insight
+            or inspiration, I&apos;m glad you came.
           </p>
         </div>
 

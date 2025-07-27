@@ -1,18 +1,7 @@
-/* @import "tailwindcss/preflight";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-body {
-  @apply antialiased transition-colors duration-300;
-} */
-
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
 @import "tailwindcss";
+/* @import "tailwindcss/preflight";  
+@import "tailwindcss/utilities";   */
 
-/* Optional: Your custom styles */
 body {
   @apply transition-colors duration-300 antialiased;
 }
