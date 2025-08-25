@@ -46,6 +46,7 @@ export default function CommentList({ postId, comments, setComments }) {
   // This function handles the deletion of a comment
   const handleDelete = async (id) => {
     const { error } = await supabase.from("comments").delete().eq("id", id);
+    console.log("Deleting comment with id:", id);
 
     if (error) {
       toast.error("Failed to delete comment.");
@@ -60,14 +61,14 @@ export default function CommentList({ postId, comments, setComments }) {
   return (
     <div className="mt-6 space-y-4">
       {comments.map((comment) => (
-        <div
-          key={comment.id}
-          className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md shadow-sm"
-        >
-          <div>
+        <div key={comment.id} className="bg-gray-100 p-4 rounded-md shadow-sm">
+          <p className="text-sm text-gray-600">
             {comment.user_email}.{""}
-            {new Date(comment.created_at).toLocaleDateString()}
-          </div>
+          </p>
+
+          <p className="text-grey-800">{comment.content}</p>
+
+          {new Date(comment.created_at).toLocaleDateString()}
 
           {/* It checks if the user is an admin before allowing deletion   */}
           {user?.id === ADMIN_ID && (
@@ -78,8 +79,6 @@ export default function CommentList({ postId, comments, setComments }) {
               Delete
             </button>
           )}
-
-          <p className="text-grey-800 dark:text-gray-200">{comment.content}</p>
         </div>
       ))}
     </div>

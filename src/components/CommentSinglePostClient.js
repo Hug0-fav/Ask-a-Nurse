@@ -37,13 +37,14 @@ export default function CommentSinglePostClient({ post }) {
           alt="Post"
           width={800}
           height={450}
-          
           className="w-full mb-6 rounded-md"
         />
       )}
 
-      <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
-      <div className="mb-10 text-gray-800 dark:text-gray-100 leading-relaxed">
+      <h1 className="text-2xl font-bold mb-4 break-words whitespace-normal">
+        {post.title}
+      </h1>
+      <div className="mb-10 text-gray-800 leading-relaxed break-words whitespace-normal ">
         {post.content}
       </div>
 
@@ -53,7 +54,7 @@ export default function CommentSinglePostClient({ post }) {
       {isAdmin && !showEdit && (
         <button
           onClick={() => setShowEdit(true)}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4"
+          className="bg-blue-600 text-white px-2 py-2 rounded hover:bg-blue-700 mb-4"
         >
           Edit Post
         </button>

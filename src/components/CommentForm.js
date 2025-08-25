@@ -13,6 +13,9 @@ export default function CommentForm({ postId, setComments }) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
+  const randomId = Math.floor(1000 + Math.random() * 9000);
+  const guestName = `Anonymous #${randomId}`;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -31,7 +34,7 @@ export default function CommentForm({ postId, setComments }) {
           {
             post_id: postId,
             content,
-            user_email: "guest",
+            user_email: guestName, // Using guest name for anonymous comments
           },
         ])
         .select()

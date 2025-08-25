@@ -2,11 +2,16 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 mt-20 w-full">
+    <footer className="bg-gray-100  text-gray-700 w-full ">
       <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left gap-8">
         {/* Section 1 - Logo and Description */}
         <div className="sm:max-w-sm">
@@ -19,9 +24,9 @@ export default function Footer() {
 
         {/* Section 2 - Quick Links */}
         <div>
-          <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
+          <h3 className="text-lg font-semibold mb-2">Links</h3>
           <ul className="space-y-1">
-            {["Home", "Posts", "About", "Request", "Contact"].map((link) => (
+            {["Posts", "About", "Request"].map((link) => (
               <li key={link}>
                 <Link
                   href={`/${link.toLowerCase()}`}
@@ -47,11 +52,14 @@ export default function Footer() {
             <a href="#" className="hover:text-blue-400">
               <FaTwitter />
             </a>
+            <a href="#" className="hover:text-blue-400">
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
 
-      <div className="text-center py-4 border-t border-gray-300 dark:border-gray-700 text-sm">
+      <div className="text-center py-4 border-t border-gray-300 text-sm">
         &copy; {new Date().getFullYear()} Jennie’s Blog. All rights reserved.
       </div>
     </footer>

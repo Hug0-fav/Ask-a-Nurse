@@ -14,12 +14,12 @@ export default function EditPostForm({ post, onDone }) {
   const [category, setCategory] = useState(post.category);
   const [title, setTitle] = useState(post.title);
   const [image, setImage] = useState(null);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     let image_url = post.image_url;
-    
+
     // It uses Supabase to update the post in the database
     if (image) {
       const { data, error: uploadError } = await supabase.storage
@@ -60,14 +60,14 @@ export default function EditPostForm({ post, onDone }) {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Title"
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded break-words whitespace-normal"
       />
 
       <textarea
         value={content}
         onChange={(e) => setContent(e.target.value)}
         placeholder="Content"
-        className="w-full border p-2 rounded min-h-[150px]"
+        className="w-full border p-2 rounded min-h-[150px] break-words whitespace-normal"
       />
 
       <input
@@ -82,7 +82,7 @@ export default function EditPostForm({ post, onDone }) {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         placeholder="Category"
-        className="w-full border p-2 rounded"
+        className="w-full border p-2 rounded "
       />
 
       <div className="flex gap-4">

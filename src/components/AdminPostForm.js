@@ -68,11 +68,9 @@ export default function AdminPostForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-900 rounded-xl shadow-md space-y-6"
+      className="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md space-y-6"
     >
-      <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
-        Create New Post
-      </h2>
+      <h2 className="text-2xl font-bold text-gray-800">Create New Post</h2>
 
       <input
         type="text"
@@ -80,7 +78,7 @@ export default function AdminPostForm() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         required
-        className="w-full border border-gray-300 dark:border-gray-700 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white"
+        className="w-full border border-gray-300  rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50"
       />
 
       <input
@@ -88,7 +86,7 @@ export default function AdminPostForm() {
         placeholder="Enter category (e.g. tech, movies)"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="w-full border border-gray-300 dark:border-gray-700 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white"
+        className="w-full border border-gray-300  rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 "
       />
 
       <textarea
@@ -96,7 +94,7 @@ export default function AdminPostForm() {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         required
-        className="w-full border border-gray-300 dark:border-gray-700 rounded px-4 py-2 text-sm h-40 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 dark:bg-gray-800 dark:text-white"
+        className="w-full border border-gray-300  rounded px-4 py-2 text-sm h-40 resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50 "
       />
 
       <input
@@ -107,7 +105,7 @@ export default function AdminPostForm() {
           setImageFile(file);
           setPreviewUrl(URL.createObjectURL(file));
         }}
-        className="text-sm text-gray-600 dark:text-gray-300"
+        className="text-sm text-gray-600 "
       />
 
       {previewUrl && (

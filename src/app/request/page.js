@@ -1,37 +1,94 @@
+"use client";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 // app/request/page.js
 export default function RequestPage() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          console.log("✅ Email sent:", result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.error("❌ Email failed:", error.text);
+          alert("Failed to send message.");
+        }
+      );
+  };
+
   return (
-    <main className="min-h-screen px-6 py-16 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Request a Topic</h1>
-        <p className="mb-8 text-gray-700 dark:text-gray-300">
-          Have something you want Jennie to write about? Fill out the form
-          below!
+    <main className="min-h-screen px-6 py-16 bg-gradient-to-br from-blue-50 to-white text-gray-900">
+      <div className="max-w-3xl mx-auto text-center mb-12">
+        <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
+          Want to make a Request?
+        </h1>
+        <p className="text-lg text-gray-600">
+          Have a topic you&apos;d love me to cover? Let&apos;s make this space
+          work for you! Send in your request — I’m listening. 💙
         </p>
-        <form className="space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full px-4 py-2 border rounded bg-gray-100 dark:bg-gray-800"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full px-4 py-2 border rounded bg-gray-100 dark:bg-gray-800"
-          />
-          <textarea
-            placeholder="Topic details..."
-            rows={5}
-            className="w-full px-4 py-2 border rounded bg-gray-100 dark:bg-gray-800"
-          ></textarea>
-          <button
-            type="submit"
-            className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-          >
-            Submit Request
-          </button>
-        </form>
       </div>
+
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="max-w-xl mx-auto p-8 bg-white rounded-2xl shadow-xl space-y-6"
+      >
+        {/* Name */}
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+          transition duration-200"
+        />
+
+        {/* Email */}
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm 
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+          transition duration-200"
+        />
+
+        {/* Message */}
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          rows="5"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm resize-none 
+          focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+          transition duration-200"
+        />
+
+        {/* Button */}
+        <button
+          type="submit"
+          className="w-full py-3 px-6 rounded-lg font-semibold text-white 
+          bg-gradient-to-r from-blue-600 to-indigo-600 
+          hover:from-blue-700 hover:to-indigo-700 
+          shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Send Request
+        </button>
+      </form>
     </main>
   );
 }

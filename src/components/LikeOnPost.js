@@ -65,11 +65,11 @@ export default function LikeOnPost({ postId }) {
   return (
     <button
       onClick={handleToggleLike}
-      className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 shadow-sm
+      className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 shadow-sm mb-3.5
     ${
       liked
         ? "bg-red-600 text-white"
-        : "bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-white"
+        : "bg-gray-200 text-gray"
     }
     hover:scale-105 hover:shadow-md active:scale-95
   `}

@@ -1,4 +1,3 @@
-import { ThemeProvider } from "next-themes";
 import { SearchProvider } from "@/context/SearchContext";
 import { Toaster } from "react-hot-toast";
 
@@ -7,22 +6,23 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Jennie’s Blog",
+  title: "Ask A Nurse",
   description: "Health topics and more",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-          <SearchProvider>
-            <Toaster position="top-right" />
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </SearchProvider>
-        </ThemeProvider>
+      <body className="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+        <SearchProvider>
+          <Toaster position="top-right" />
+          <Navbar />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </SearchProvider>
       </body>
     </html>
   );
