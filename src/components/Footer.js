@@ -12,59 +12,52 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-100  text-gray-700 w-full ">
-      <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left gap-8">
-        {/* Section 1 - Logo and Description */}
-        <div className="sm:max-w-sm">
-          <Link href="/" className="flex items-center space-x-2">
-            {/* Logo */}
-            <Image
-              src="/name.png"
-              alt="Jennie’s Blog Logo"
-              width={128}
-              height={32}
-            />
-          </Link>
-          <p className="text-sm leading-relaxed">
-            Sharing knowledge and insights on health, lifestyle, and more. Find
-            out what makes Jennie’s blog tick.
-          </p>
-        </div>
+    <footer className="bg-green-50 text-gray-700 w-full border-t border-gray-200">
+      <div className="max-w-4xl mx-auto px-6 py-12 flex flex-col items-center text-center gap-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src="/name.png"
+            alt="Jennie’s Blog Logo"
+            width={150}
+            height={40}
+          />
+        </Link>
 
-        {/* Section 2 - Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Links</h3>
-          <ul className="space-y-1">
-            {["Posts", "About", "Request"].map((link) => (
-              <li key={link}>
-                <Link
-                  href={`/${link.toLowerCase()}`}
-                  className="hover:text-blue-500 transition-colors"
-                >
-                  {link}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Description */}
+        <p className="text-sm max-w-md leading-relaxed">
+          Sharing knowledge and insights on health, lifestyle, and more. Find
+          out what makes Jennie’s blog tick.
+        </p>
 
-        {/* Section 3 - Socials */}
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
-          <div className="flex gap-4 justify-center sm:justify-start text-xl">
-            <a href="#" className="hover:text-blue-600">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="hover:text-pink-500">
-              <FaInstagram />
-            </a>
-            <a href="#" className="hover:text-blue-400">
-              <FaTwitter />
-            </a>
-            <a href="#" className="hover:text-blue-400">
-              <FaLinkedin />
-            </a>
-          </div>
+        {/* Links */}
+        <ul className="flex gap-6 text-sm font-medium">
+          {["Posts", "About", "Request"].map((link) => (
+            <li key={link}>
+              <Link
+                href={`/${link.toLowerCase()}`}
+                className="hover:text-green-700 transition-colors"
+              >
+                {link}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Socials */}
+        <div className="flex gap-4 text-lg">
+          <a href="#" className="hover:text-blue-600">
+            <FaFacebookF />
+          </a>
+          <a href="#" className="hover:text-pink-500">
+            <FaInstagram />
+          </a>
+          <a href="#" className="hover:text-blue-400">
+            <FaTwitter />
+          </a>
+          <a href="#" className="hover:text-blue-600">
+            <FaLinkedin />
+          </a>
         </div>
       </div>
 
