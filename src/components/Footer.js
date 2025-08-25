@@ -1,6 +1,7 @@
 // components/Footer.js
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   FaFacebookF,
@@ -15,7 +16,15 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-between text-center sm:text-left gap-8">
         {/* Section 1 - Logo and Description */}
         <div className="sm:max-w-sm">
-          <h2 className="text-xl font-bold mb-2">Jennie’s Blog</h2>
+          <Link href="/" className="flex items-center space-x-2">
+            {/* Logo */}
+            <Image
+              src="/name.png"
+              alt="Jennie’s Blog Logo"
+              width={128}
+              height={32}
+            />
+          </Link>
           <p className="text-sm leading-relaxed">
             Sharing knowledge and insights on health, lifestyle, and more. Find
             out what makes Jennie’s blog tick.
