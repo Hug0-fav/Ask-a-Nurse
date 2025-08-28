@@ -30,9 +30,9 @@ export default function Home() {
           <div className="h-full flex flex-col md:flex-row items-stretch justify-between">
             {/* Left: Text */}
             <div className="w-full md:w-1/2 flex flex-col justify-center py-8 md:py-0">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-header font-extrabold text-green-900 leading-tight mb-4 sm:mb-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-body font-extrabold text-green-900 leading-tight mb-4 sm:mb-6">
                 Welcome to
-                <span className="px-1 block sm:inline lg:block text-5xl sm:text-inherit lg:text-7xl text-green-800 mt-2 sm:mt-0">
+                <span className="px-1 block sm:inline lg:block text-5xl sm:text-inherit lg:text-7xl text-green-800 mt-1 sm:mt-0">
                   Ask A Nurse
                 </span>
               </h1>
