@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <section className="max-w-6xl mx-auto px-4 py-12">
       {/* Title */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-5">
         <h2 className="font-header text-3xl md:text-4xl font-bold text-gray-800">
           About Ask A Nurse
         </h2>
