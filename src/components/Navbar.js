@@ -51,14 +51,16 @@ export default function Navbar() {
   );
 
   return (
-    <header className="w-full shadow-md bg-white sticky top-0 z-50">
+    <header className="w-full shadow-md bg-white sticky top-0 z-50 font-body">
       <nav className="flex justify-between items-center max-w-6xl mx-auto px-4 py-4">
         {/* Logo */}
-        <NavbarLogo />
+        <div className="font-header">
+          <NavbarLogo />
+        </div>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex">
-          <NavLinks />
+          <NavLinks className="font-body" />
         </div>
 
         {/* Mobile menu button - only visible on small screens */}
@@ -76,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="px-4 pb-6 bg-white text-center">
+        <div className="px-4 pb-6 bg-white text-center font-body">
           <NavLinks onClick={() => setMenuOpen(false)} />
         </div>
       )}

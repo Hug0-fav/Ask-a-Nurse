@@ -7,7 +7,12 @@ const config = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        header: ["var(--font-space-grotesk)", "sans-serif"],
+        body: ["var(--font-poppins)", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

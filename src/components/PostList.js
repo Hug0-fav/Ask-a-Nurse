@@ -80,16 +80,16 @@ export default function PostList() {
 
               <div className="p-4">
                 <Link href={`/posts/${post.id}`}>
-                  <h3 className="font-bold text-lg mb-2 hover:underline">
+                  <h3 className="font-header font-bold text-lg mb-2 hover:underline">
                     {post.title}
                   </h3>
                 </Link>
 
-                <p className="text-xs text-gray-500 mb-2">
+                <p className="font-body text-xs text-gray-500 mb-2">
                   Published {new Date(post.created_at).toLocaleDateString()}
                 </p>
 
-                <p className="text-sm text-gray-700  line-clamp-4">
+                <p className="font-body text-sm text-gray-700 line-clamp-4">
                   {post.content}
                 </p>
               </div>

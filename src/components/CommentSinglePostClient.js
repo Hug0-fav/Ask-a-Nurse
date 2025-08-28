@@ -41,20 +41,21 @@ export default function CommentSinglePostClient({ post }) {
         />
       )}
 
-      <h1 className="text-2xl font-bold mb-4 break-words whitespace-normal">
+      <h1 className="font-header text-2xl font-bold mb-4 break-words whitespace-normal">
         {post.title}
       </h1>
-      <div className="mb-10 text-gray-800 leading-relaxed break-words whitespace-normal ">
+
+      <div className="font-body mb-10 text-gray-800 leading-relaxed break-words whitespace-normal">
         {post.content}
       </div>
 
       <LikeOnPost postId={post.id} />
 
-      {/* it fetches the user session and checks if the user is an admin. it allows the admin to edit or delete the post */}
+      {/* Admin Controls */}
       {isAdmin && !showEdit && (
         <button
           onClick={() => setShowEdit(true)}
-          className="bg-blue-600 text-white px-2 py-2 rounded hover:bg-blue-700 mb-4"
+          className="bg-blue-600 text-white px-2 py-2 rounded hover:bg-blue-700 mb-4 font-body"
         >
           Edit Post
         </button>
@@ -66,8 +67,8 @@ export default function CommentSinglePostClient({ post }) {
 
       {isAdmin && <DeletePostButton postId={post.id} />}
 
-      {/*to add comments */}
-      <h2 className="text-xl font-semibold mb-2 mt-10">Comments</h2>
+      {/* Comments Section */}
+      <h2 className="font-header text-xl font-semibold mb-2 mt-10">Comments</h2>
       <CommentForm postId={post.id} setComments={setComments} />
       <CommentList
         postId={post.id}
