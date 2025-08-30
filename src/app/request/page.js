@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 // app/request/page.js
 export default function RequestPage() {
@@ -18,14 +19,16 @@ export default function RequestPage() {
       )
       .then(
         (result) => {
-          console.log("✅ Email sent:", result.text);
-          alert("Message sent successfully!");
+          // console.log("✅ Email sent:", result.text);
+          toast.success("Message sent successfully!");
         },
         (error) => {
-          console.error("❌ Email failed:", error.text);
-          alert("Failed to send message.");
+          // console.error("❌ Email failed:", error.text);
+          toast.error("Failed to send message.");
         }
       );
+
+      form.current.reset();
   };
 
   return (
