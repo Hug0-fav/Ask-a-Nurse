@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main className="bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative w-full bg-green-100 overflow-hidden">
+      <section className="relative w-full overflow-hidden bg-[url('/bg-nurse.png')] bg-cover bg-center bg-no-repeat">
         <div className="max-w-screen-2xl mx-auto px-6 md:px-10 lg:px-16 xl:px-24">
           <div className="h-full flex flex-col md:flex-row items-stretch justify-between">
             {/* Left: Text */}
@@ -52,10 +52,10 @@ export default function Home() {
                 height={900}
                 priority
                 className="
-            object-contain
-            w-[88%] sm:w-[82%] md:w-[90%] lg:w-[78%] xl:w-[70%] 2xl:w-[60%]
-            max-h-[80vh]
-          "
+              object-contain
+              w-[88%] sm:w-[82%] md:w-[90%] lg:w-[78%] xl:w-[70%] 2xl:w-[60%]
+              max-h-[80vh]
+            "
               />
             </div>
           </div>
